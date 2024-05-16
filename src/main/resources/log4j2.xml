@@ -7,8 +7,8 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{dd/MMM/yyyy HH:mm:ss.SSS}- %c{1}: %m%n"/>
         </Console>
-        <RollingFile name="tasks" fileName="${log-path}/test-dhruv.log"
-                     filePattern="${log-path}/test-dhruv-%d{yyyy-MM-dd}-%i.log">
+        <RollingFile name="tasks" fileName="${log-path}/test-employee.log"
+                     filePattern="${log-path}/test-employee-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <pattern>%d{dd/MMM/yyyy HH:mm:ss.SSS}- %c{1}: %m%n</pattern>
             </PatternLayout>
@@ -18,7 +18,7 @@
             <DefaultRolloverStrategy max="100">
                 <Delete basePath="${log-path}" maxDepth="1">
                     <IfAll>
-                        <IfFileName glob="test-dhruv*"/>
+                        <IfFileName glob="test-employee*"/>
                         <IfLastModified age="5d"/>
                     </IfAll>
                 </Delete>
@@ -29,7 +29,7 @@
 
     <Loggers>
         <logger name="org.hibernate" level="ERROR"/>
-        <logger name="com.test" level="debug"/>
+        <logger name="com.employee.employeedetails" level="debug"/>
         <Root level="ERROR">
             <AppenderRef ref="tasks" level="debug"/>
             <AppenderRef ref="Console" level="debug"/>

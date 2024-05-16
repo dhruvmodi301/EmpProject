@@ -41,7 +41,6 @@ public class EmployeeController {
     @PostMapping("/get-all")
     public DataTablesOutput<EmployeeDetailsData> getAllEmployees(@RequestBody DataTablesInput dataTablesInput) {
         log.debug("Inside getAllEmployees dataTablesInput: {}", dataTablesInput);
-        System.out.println("dataTablesInput = " + dataTablesInput);
         return service.getAllEmployeeDetails(dataTablesInput);
     }
 

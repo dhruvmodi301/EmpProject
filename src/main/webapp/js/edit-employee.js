@@ -66,7 +66,7 @@ $(document).ready(function () {
                 data: JSON.stringify(getFormData($(form))),
                 contentType: "application/json",
                 success: function (response) {
-                    window.location.href = "/home";
+                    window.location.href = "/employee/home";
                 }
             });
         }
